@@ -38,7 +38,7 @@ class ZTPage:
                 liste[host] = {}
             if elem.name == 'a':
                 elem.string = elem.string.replace("Episode", '').replace('Final', '').strip()
-                episode_number = int(elem.string)
+                episode_number = str(elem.string.encode('utf-8'))
                 liste[host][episode_number] = elem.attrs['href']
         self.links = liste
 
